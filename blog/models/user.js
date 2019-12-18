@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
     //连接数据库
-mongoose.connect('mongodb://locolhost:27017/test', {
+mongoose.connect('mongodb://localhost:27017/test', {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -14,7 +14,7 @@ var userSchema = new Schema({
         type: String,
         required: true
     },
-    nikename: {
+    nickname: {
         type: String,
         required: true
     },
@@ -28,6 +28,10 @@ var userSchema = new Schema({
     },
     last_modified_time: {
         type: Date,
+        default: Date.now
+    },
+    avatar: {
+        type: String,
         default: '/public/img/avatar-default.png'
     },
     bio: {
